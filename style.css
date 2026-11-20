@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f2f5f8;
+  color: #1f2937;
+}
+
+.container {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+h1 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.status-card,
+.message-card,
+.data-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.status-card {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+  padding: 18px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.status {
+  display: inline-block;
+  min-width: 82px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.connected,
+.receiving {
+  background: #16a34a;
+}
+
+.disconnected {
+  background: #dc2626;
+}
+
+.waiting {
+  background: #64748b;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.data-card {
+  min-height: 190px;
+  padding: 24px;
+  text-align: center;
+}
+
+.data-card h2,
+.message-card h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  color: #475569;
+}
+
+.lux-card {
+  border-top: 6px solid #f59e0b;
+}
+
+.value {
+  margin-top: 14px;
+}
+
+.value span:first-child {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.unit {
+  margin-left: 6px;
+  font-size: 20px;
+  color: #64748b;
+}
+
+.level {
+  margin-top: 8px;
+  color: #475569;
+}
+
+.brightness-bar {
+  width: 100%;
+  height: 16px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e2e8f0;
+}
+
+#brightness-fill {
+  width: 0;
+  height: 100%;
+  background: #facc15;
+  transition: width 0.3s ease;
+}
+
+.button-state {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.button-state.pressed {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.timestamp {
+  margin-top: 32px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.message-card {
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.message-card h2 {
+  margin-bottom: 10px;
+}
+
+.message-card p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .status-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .status-row {
+    justify-content: space-between;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value span:first-child {
+    font-size: 42px;
+  }
+}
