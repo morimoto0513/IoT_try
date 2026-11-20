@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>IoT 動作確認</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <main class="container">
+    <h1>IoT 動作確認</h1>
+
+    <section class="status-card">
+      <div class="status-row">
+        <span class="label">MQTT接続</span>
+        <span id="connection-status" class="status disconnected">
+          接続中
+        </span>
+      </div>
+
+      <div class="status-row">
+        <span class="label">データ受信</span>
+        <span id="receive-status" class="status waiting">
+          待機中
+        </span>
+      </div>
+    </section>
+
+    <section class="data-grid">
+      <article class="data-card lux-card">
+        <h2>照度</h2>
+
+        <div class="value">
+          <span id="lux-value">--</span>
+          <span class="unit">lux</span>
+        </div>
+      </article>
+
+      <article class="data-card">
+        <h2>LED光度</h2>
+
+        <div class="value">
+          <span id="brightness-value">--</span>
+          <span class="unit">%</span>
+        </div>
+
+        <div class="level">
+          段階：
+          <span id="level-value">--</span>
+        </div>
+
+        <div class="brightness-bar">
+          <div id="brightness-fill"></div>
+        </div>
+      </article>
+
+      <article class="data-card">
+        <h2>ボタン</h2>
+
+        <div id="button-value" class="button-state">
+          未取得
+        </div>
+      </article>
+
+      <article class="data-card">
+        <h2>最終受信</h2>
+
+        <div id="timestamp-value" class="timestamp">
+          --
+        </div>
+      </article>
+    </section>
+
+    <section class="message-card">
+      <h2>受信状況</h2>
+      <p id="message">Raspberry Piからのデータを待っています。</p>
+    </section>
+  </main>
+</body>
+</html>
